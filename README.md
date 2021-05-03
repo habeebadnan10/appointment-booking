@@ -35,6 +35,26 @@ curl --location --request POST 'https://ghl-appointment-booking.herokuapp.com/ap
     "timezone": "US/Eastern"
 }'
 ```
+Example Response :
+```javascript
+{
+    "FreeSlots": [
+        "2021-05-04 08:00 AM",
+        "2021-05-04 09:00 AM",
+        "2021-05-04 09:30 AM",
+        "2021-05-04 10:00 AM",
+        "2021-05-04 11:00 AM",
+        "2021-05-04 12:00 PM",
+        "2021-05-04 12:30 PM",
+        "2021-05-04 01:00 PM",
+        "2021-05-04 01:30 PM",
+        "2021-05-04 03:00 PM",
+        "2021-05-04 03:30 PM",
+        "2021-05-04 04:00 PM",
+        "2021-05-04 04:30 PM"
+    ]
+}
+```
 
 **Get Events**
 
@@ -47,6 +67,49 @@ curl --location --request POST 'https://ghl-appointment-booking.herokuapp.com/ap
     "startdate": "2021-05-03",
     "enddate": "2021-05-04"
 }'
+```
+
+Example Response :
+```javascript
+{
+    "events": [
+        {
+            "date": "2021-5-3",
+            "events": [
+                {
+                    "endTime": "2021-05-03T12:00",
+                    "startTime": "2021-05-03T11:30",
+                    "duration": 30
+                }
+            ]
+        },
+        {
+            "date": "2021-5-4",
+            "events": [
+                {
+                    "startTime": "2021-05-04T08:30",
+                    "duration": 30,
+                    "endTime": "2021-05-04T09:00"
+                },
+                {
+                    "duration": 30,
+                    "startTime": "2021-05-04T10:30",
+                    "endTime": "2021-05-04T11:00"
+                },
+                {
+                    "endTime": "2021-05-04T12:00",
+                    "startTime": "2021-05-04T11:30",
+                    "duration": 30
+                },
+                {
+                    "startTime": "2021-05-04T14:00",
+                    "duration": 50,
+                    "endTime": "2021-05-04T14:50"
+                }
+            ]
+        }
+    ]
+}
 ```
 
 **Create Event**
@@ -62,7 +125,13 @@ curl --location --request POST 'https://ghl-appointment-booking.herokuapp.com/ap
     "timezone": "Asia/Kolkata"
 }'
 ```
-## Database Structure
+
+Example Respone :
+
+```javascript
+Event Created from 2021-05-02T10:30 to 2021-05-02T11:00 in Dr. John's Calendar(Tz : US/Eastern)
+```
+## Database Structure - FireStore
 
 event (Collection) --> Date (Document) --> TimeSlots (Collection) --> Time (Document)
 
