@@ -92,7 +92,7 @@ router.post("/", async (req, res) => {
         })
         .then(() => console.log("Saved"));
    
-   res.send(`Event Created from ${startTime} to ${endTime} in Dr. John's Calendar(Tz : ${config.Timezone})`);
+   res.send(`Event Created from ${startTime} to ${endTime} in Prof. Sotak's Calendar(Tz : ${config.Timezone})`);
   }
 
 });

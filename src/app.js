@@ -11,7 +11,7 @@ app.use(cors());
 
 // basic route for testing
 app.get("/", (req, res) => {
-  res.send("GHL Appointment Booking.");
+  res.send("Appointment Booking.");
 });
 
 // Routes to be handled
